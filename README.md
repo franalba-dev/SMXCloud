@@ -30,7 +30,7 @@ SMXCloud uses **[Django](https://www.djangoproject.com/)** as the base for the p
 - [ ] Avatar and descriptions for the users.
 - [ ] More ideas that I will have.
 
-##  License
-🧾 This project is licensed under [GPL v3](LICENSE).
+## 🧾 License
+This project is licensed under [GPL v3](LICENSE).
 
 <p align="center">Last Edited on: 03/06/2025</p>
