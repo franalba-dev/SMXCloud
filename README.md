@@ -1,4 +1,5 @@
 <h1 align="center">☁️ SMXCloud</h1>
+
 SMXCloud is a web application that allows you to share documents between teachers and students in an educational center in a very simple and fast way.
 It also allows you as a teacher to manage these documents, create or delete users, create subjects...
 SMXCloud uses **[Django](https://www.djangoproject.com/)** as the base for the project.
