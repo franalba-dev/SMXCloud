@@ -26,7 +26,7 @@ SMXCloud uses **[Django](https://www.djangoproject.com/)** as the base for the p
 - [ ] Restructure the pages of the documents in order to make even easier to find the documents.
 - [ ] Improve the filters on everything.
 - [ ] Previews of the documents.
-- [ ] Edit many kinds of documents. For example, SMXCloud will allow you do edit a .txt or .html but not a .zip.
+- [ ] Edit many kinds of documents. For example, SMXCloud will allow you to edit a .txt or .html but not a .zip.
 - [ ] Users will be available to configure his profile.
 - [ ] Avatar and descriptions for the users.
 - [ ] More ideas that I will have.
