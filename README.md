@@ -6,8 +6,8 @@ SMXCloud uses **[Django](https://www.djangoproject.com/)** as the base for the p
 
 ## 🗒️ Notes
 - In the futures days I will be uploading the code of the project and the guides that I made.
-- If you have any new idea, I will appreciate a lot that you share it with me.
 - I made this project as a part of my final grade project, but I didn't have enough time to make it as well as I wanted. So I will be updating this project with the time. Right you can see the code and try to use the application, but it isn't recommended to use it in a real environment until the version 3.0, that may be the last version.   
+- If you have any new idea, I will appreciate a lot that you share it with me.
  
 ## 🚀 Coming updates
 ### SMXCloud 2.0
