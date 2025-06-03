@@ -4,8 +4,6 @@
 It also allows you as a teacher to manage these documents, create or delete users, create subjects...
 SMXCloud uses **[Django](https://www.djangoproject.com/)** as the base for the project.
 
-<br>
-
 ## 🗒️ Notes
 - In the futures days I will be uploading the code of the project and the guides that I made.
 - If you have any new idea, I will appreciate a lot that you share it with me.
