@@ -29,7 +29,7 @@ SMXCloud uses **[Django](https://www.djangoproject.com/)** as the base for the p
 - [ ] Edit many kinds of documents. For example, SMXCloud will allow you to edit a .txt or .html but not a .zip.
 - [ ] Users will be available to configure his profile.
 - [ ] Avatar and descriptions for the users.
-- [ ] Backup system of the documents.
+- [ ] Backup system for the documents.
 - [ ] More ideas that I will have.
 
 ## 🧾 License
