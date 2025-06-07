@@ -7,30 +7,48 @@ SMXCloud uses **[Django](https://www.djangoproject.com/)** as the base for the p
 ## 🗒️ Notes
 - In the futures days I will be uploading the code of the project and the guides that I made.
 - I made this project as a part of my final grade project, but I didn't have enough time to make it as well as I wanted. So I will be updating this project with the time.
-- Right now, you can see the code and try to use the application, but it isn't recommended to use it in a real environment until the version 3.0, that may be the last version.   
+- Right now, you can see the code and try to use the application, but it isn't recommended to use it in a real environment until the version 2.0, that may be the last version.   
 - If you have any new idea, I will appreciate a lot that you share it with me.
  
 ## 🚀 Coming updates
-### SMXCloud 2.0
+
+### SMXCloud 1.1
 - [ ] Install Axes (or an alternative) to limit login attempts and prevent brute-force attacks.
+- [ ] Restructure the pages of the documents in order to make even easier to find the documents.
+- [ ] New setting's site for the website. There, you will be able, for example, to change the logo of the website and the name of it.
+- [ ] Use base.html as the template base, instead of "home.html".
+- [ ] Delete the media of a document when you delete the document.
+
+### SMXCloud 1.2
+- [ ] New group "Administrators". This new group will be able to delete and create teacher users without having to go to the backend. Also, the administrators will be the only users to be able to manage the settings of the site.
+- [ ] Limit the kinds of groups available to Teachers, Students and Administrators.
+- [ ] Improvement of the urls.
+- [ ] Improves on the filters. For example, now you will be able to filter the documents by the kinds extensions.
+
+### SMXCloud 1.3
 - [ ] Replace Bootstrap with Tailwind or CSS.
-- [ ] Implement light/dark mode themes.
-- [ ] Use base.html as the template base, instead of "home.html". 
+- [ ] New light/dark mode themes.
+- [ ] New icons for the documents.
+
+### SMXCloud 1.4
+- [ ] A webpage for the documents, there you will be able to copy the link of the page to share the document, edit the document and new improves in future updates. 
+- [ ] Edit many kinds of documents. SMXCloud won't allow you to edit a .zip or other kinds of documents, to prevent corrupted files.
+- [ ] Users will be available to configure his own profile.
+- [ ] Custom avatars and descriptions for the users.
+
+### SMXCloud 1.5
+- [ ] Limit the space that every user can use to upload documents, by his group. For example, you can make that the students can only upload up to 15 GB of documents. They will be able to see how much are they using in his profile settings.
+- [ ] Comments for the documents.
+- [ ] Logs of the actions made by users on the settings page.
+- [ ] Backup system for the documents.
+
+### SMXCloud 2.0
+- [ ] Optimize the code and make it clean.
 - [ ] Improve the logo.
-- [ ] Optimize general code structure.
-- [ ] Improve the guides.
 - [ ] New installation guide.
 - [ ] New video tutorial.
-
-### SMCloud 3.0
-- [ ] Restructure the pages of the documents in order to make even easier to find the documents.
-- [ ] Improve the filters on everything.
-- [ ] Previews of the documents.
-- [ ] Edit many kinds of documents. For example, SMXCloud will allow you to edit a .txt or .html but not a .zip.
-- [ ] Users will be available to configure his profile.
-- [ ] Avatar and descriptions for the users.
-- [ ] Backup system for the documents.
-- [ ] More ideas that I will have.
+- [ ] Improve the old guides.
+- [ ] More ideas, that I might have.
 
 ## 🧾 License
 This project is licensed under [GPL v3](LICENSE).
