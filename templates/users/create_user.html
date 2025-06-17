@@ -1,4 +1,4 @@
-{% extends 'home.html' %}
+{% extends 'base.html' %}
 
 {% load widget_tweaks %}
 
@@ -7,7 +7,6 @@
 {% block title %} | Crear Usuario {% endblock title %}
 
 {% block content %}
-<body>
     {% if messages %}
         {% for message in messages %}
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -43,5 +42,4 @@
             </div>
         </div>
     </div>
-</body>
 {% endblock content %}

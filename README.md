@@ -17,7 +17,7 @@ SMXCloud uses **[Django](https://www.djangoproject.com/)** as the base for the p
 - [ ] Install Axes (or an alternative) to limit login attempts and prevent brute-force attacks.
 - [ ] Restructure the pages of the documents in order to make even easier to find the documents.
 - [ ] New setting's site for the website. There, you will be able, for example, to change the logo of the website and the name of it.
-- [ ] Use base.html as the template base, instead of "home.html".
+- [x] Use base.html as the template base, instead of "home.html".
 - [ ] Delete the media of a document when you delete the document.
 
 ### SMXCloud 1.2

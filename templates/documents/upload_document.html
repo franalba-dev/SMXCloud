@@ -1,4 +1,4 @@
-{% extends 'home.html' %} 
+{% extends 'base.html' %} 
 
 {% load widget_tweaks %}
 {% block search_visibility %}hidden{% endblock search_visibility %}
@@ -6,8 +6,6 @@
 {% block title %} | Subir Documento {% endblock title %}
 
 {% block content %}
-
-<body>
     {% if messages %}
         {% for message in messages %}
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -43,5 +41,4 @@
                 </div>
             </div>
         </div>
-</body>
 {% endblock content %}

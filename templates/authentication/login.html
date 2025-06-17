@@ -1,11 +1,10 @@
-{% extends 'home.html' %}
+{% extends 'base.html' %}
 {% block search_visibility %}hidden{% endblock search_visibility %}
 
 
 {% block title %} | Iniciar Sesión {% endblock title %}
 
 {% block content %}
-<body>
     {% if messages %}
         {% for message in messages %}
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -31,5 +30,4 @@
             </div>
             </form>
     </form>
-</body>
 {% endblock content %}

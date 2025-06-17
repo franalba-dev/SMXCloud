@@ -1,9 +1,8 @@
-{% extends 'home.html' %}
+{% extends 'base.html' %}
 
 {% block title %} | Listado de documentos {% endblock title %}
 
 {% block content %}
-<body>
   {% if messages %}
           {% for message in messages %}
           <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -113,5 +112,4 @@
     {% else %}
       <p class="text-center mt-2 fs-5">No se encontraron documentos.</p>
     {% endif %} 
-</body>
 {% endblock content %}

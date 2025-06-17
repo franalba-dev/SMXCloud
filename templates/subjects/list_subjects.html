@@ -1,11 +1,10 @@
-{% extends 'home.html' %}
+{% extends 'base.html' %}
 {% block search_text %}asignatura{% endblock search_text %}
 {% block filters%}{% endblock filters%}
 
 {% block title %} | Listado de asignaturas {% endblock title %}
 
 {% block content %}
-    <body>
       {% if messages %}
         {% for message in messages %}
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -119,5 +118,4 @@
             </a>
           </div>
         {% endif %}
-    </body>
 {% endblock content %}

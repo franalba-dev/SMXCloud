@@ -1,4 +1,4 @@
-{% extends 'home.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block search_text %}usuario{% endblock search_text %}
 {% block filters%}
@@ -32,7 +32,6 @@
 {% block title %} | Listado de usuarios {% endblock title %}
 
 {% block content %}
-<body>
     {% if messages %}
         {% for message in messages %}
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -153,5 +152,4 @@
         </a>
       </div>
     {% endif %}
-</body>
 {% endblock content %}
