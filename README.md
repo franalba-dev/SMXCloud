@@ -5,14 +5,15 @@ It also allows you as a teacher to manage these documents, create or delete user
 SMXCloud uses **[Django](https://www.djangoproject.com/)** as the base for the project.
 
 ## 🗒️ Notes
-- In the futures days I will be uploading the code of the project and the guides that I made.
-- I made this project as a part of my final grade project, but I didn't have enough time to make it as well as I wanted. So I will be updating this project with the time.
+- In the futures days I will be uploading the guides that I made.
+- I made this project as a part of my final grade project, but I didn't have enough time to make it as well as I wanted. So I will be updating this project in my free time.
 - Right now, you can see the code and try to use the application, but it isn't recommended to use it in a real environment until the version 2.0, that may be the last version.   
 - If you have any new idea, I will appreciate a lot that you share it with me.
  
 ## 🚀 Coming updates
 
 ### SMXCloud 1.1
+- [ ] Translate to English some parts of the code.
 - [ ] Install Axes (or an alternative) to limit login attempts and prevent brute-force attacks.
 - [ ] Restructure the pages of the documents in order to make even easier to find the documents.
 - [ ] New setting's site for the website. There, you will be able, for example, to change the logo of the website and the name of it.
@@ -53,4 +54,4 @@ SMXCloud uses **[Django](https://www.djangoproject.com/)** as the base for the p
 ## 🧾 License
 This project is licensed under [GPL v3](LICENSE).
 
-<p align="center">Last Edited on: 07/06/2025</p>
+<p align="center">Last Edited on: 17/06/2025</p>
