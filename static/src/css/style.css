@@ -1,0 +1,96 @@
+.card_width{
+    width: 23.5rem;
+}
+
+.document_title{
+    height: 45px;
+    overflow: hidden;
+}
+
+.custom-bg1 {
+    background-color: rgb(181, 226, 255) !important;
+}
+
+.custom-bg2{
+    background-color: #d4f3fe !important;
+}
+
+.table-bordered,
+  .table-bordered th,
+  .table-bordered td {
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+.table-custom-shadow {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)) !important;
+  }
+
+.table-responsive {
+    overflow: visible !important;
+  }
+
+nav{
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)) !important;
+    overflow: visible !important;
+}
+
+footer{
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)) !important;
+    overflow: visible !important;
+}
+
+.custom-shadow{
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)) !important;
+  overflow: visible !important;
+}
+
+.custom-shadow2{
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5)) !important;
+  overflow: visible !important;
+}
+
+.custom-shadow3{
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)) !important;
+  overflow: visible !important;
+}
+
+.custom-font-size{
+  font-size: 42px;
+}
+
+.bordless{
+  border: 0px;
+}
+
+.fs-7{
+  font-size: 1.15rem;
+}
+
+.error-code {
+  font-size: 100px;
+  background: linear-gradient(to bottom, black, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+}
+
+.error-message {
+  font-size: 20px;
+  color: #333;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.primary-color{
+  color: #0d6efd;
+}
+
+.nav-div{
+  display: grid;
+  place-items: center;
+}

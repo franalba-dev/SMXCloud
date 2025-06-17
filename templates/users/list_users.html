@@ -1,0 +1,157 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block search_text %}usuario{% endblock search_text %}
+{% block filters%}
+    <select
+      name="gender"
+      id="gender"
+      class="form-select"
+    >
+      <option value="" {% if gender_pk == '' %}selected{% endif %}>Todos los generos</option>
+      <option value="null" {% if gender_pk == 'null' %}selected{% endif %}>
+        Sin asignar
+      </option>
+      {% for g in gender_choices %}
+        {% if g %}
+          <option value="{{ g }}"
+            {% if g == gender_pk %}selected{% endif %}>
+            {{ g|capfirst }}
+          </option>
+        {% endif %}
+      {% endfor %}
+    </select>
+    <input
+      type="date"
+      id="birthday"
+      name="birthday"
+      class="form-control ms-2 me-2"
+      value="{{ selected_date }}"
+    >
+{% endblock filters%}
+
+{% block title %} | Listado de usuarios {% endblock title %}
+
+{% block content %}
+<body>
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    {% endif %}
+    <h1 class="text-center fw-bold custom-font-size mb-0 mt-4 pb-2">
+      Usuarios Alumnos
+    </h1>
+    {% if page_obj %}
+      <div class="table-responsive mt-4 ms-5 me-5">
+        <table class="table table-hover table-bordered align-middle table-custom-shadow rounded">
+          <thead class="table-info text-center">
+            <tr>
+              <th class="custom-bg1 text-start">Nombre del usuario</th>
+              <th class="custom-bg1 text-start">Email</th>
+              <th class="custom-bg1">Género</th>
+              <th class="custom-bg1">Fecha de nacimiento</th>
+              <th class="custom-bg1">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in page_obj %}
+            <tr>
+              <td class="text-capitalize">{{ user|truncatechars:50 }}</td>
+              <td>{{ user.email|truncatechars:50 }}</td>
+              <td class="text-center">{{ user.gender|default_if_none:"Sin asignar" }}</td>
+              <td class="text-center">
+                {% if user.birthday %}
+                  {{ user.birthday|date:"d/m/Y" }}
+                {% else %}
+                  <span>Sin asignar</span>
+                {% endif %}
+              </td>
+              <td class="text-center">
+                <a href="/editar-usuario/{{ user.id }}" class="btn btn-outline-warning btn-sm me-2">
+                  <i class="bi bi-pencil-fill"></i> Editar
+                </a>
+
+
+                <button id="open-{{ user.id }}" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash-fill"></i> Eliminar</button>
+
+                <dialog id="dialog-{{ user.id }}" class="custom-shadow bordless">
+                  <h3>{{ user|truncatechars:60 }}</h3>
+                  <p>¿Estás seguro de que quieres eliminar este usuario?</p>
+                  <a href="/eliminar-usuario/{{ user.id }}" class="btn btn-outline-danger btn-sm">Confirmar</a>
+                  <button id="close-{{ user.id }}" class="btn btn-outline-primary btn-sm">Cerrar</button>
+                </dialog>
+                
+                <script>
+                  document.addEventListener('DOMContentLoaded', (event) => {
+                    const openButton = document.getElementById('open-{{ user.id }}');
+                    const closeButton = document.getElementById('close-{{ user.id }}');
+                    const dialog = document.getElementById('dialog-{{ user.id }}');
+                
+                    openButton.addEventListener('click', () => {
+                      dialog.showModal();
+                    });
+                
+                    closeButton.addEventListener('click', () => {
+                      dialog.close();
+                    });
+                  });
+                </script>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <nav aria-label="Paginación usuarios" class="d-flex align-items-center position-relative py-4 mb-4">
+        {% if is_not_alumno %}      
+          <a href="/crear-usuario/" class="btn btn-primary btn-lg custom-shadow position-absolute start-50 translate-middle-x">
+            <i class="bi bi-person-fill-add me-2 fs-4 align-middle"></i>
+            <span class="fs-5 align-middle">Crear usuario</span>
+          </a>
+        {% endif %}
+        <ul class="pagination m-auto me-5">
+          {% if page_obj.has_previous %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ page_obj.previous_page_number }}&amp;{% if search %}search={{ search }}&amp;{% endif %}{% if gender_pk %}&amp;gender={{ gender_pk }}{% endif %}{% if selected_date %}&amp;birthday={{ selected_date }}{% endif %}">
+                &laquo; Anterior
+              </a>
+            </li>
+          {% else %}
+            <li class="page-item disabled"><span class="page-link">&laquo; Anterior</span></li>
+          {% endif %}
+          
+          {% for num in page_range %}
+            {% if num == page_obj.number %}
+              <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+            {% else %}
+              <li class="page-item">
+                <a class="page-link" href="?page={{ num }}&amp;{% if search %}search={{ search }}&amp;{% endif %}{% if gender_pk %}&amp;gender={{ gender_pk }}{% endif %}{% if selected_date %}&amp;birthday={{ selected_date }}{% endif %}">
+                  {{ num }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          
+          {% if page_obj.has_next %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ page_obj.next_page_number }}&amp;{% if search %}search={{ search }}&amp;{% endif %}{% if gender_pk %}&amp;gender={{ gender_pk }}{% endif %}{% if selected_date %}&amp;birthday={{ selected_date }}{% endif %}">Siguiente &raquo;</a>
+            </li>
+          {% else %}
+            <li class="page-item disabled"><span class="page-link">Siguiente &raquo;</span></li>
+          {% endif %}
+        </ul>
+      </nav>
+    {% else %}
+      <p class="text-center mt-2 fs-5">No se encontraron usuarios.</p>
+      <div class="text-center mb-3 mt-1">
+        <a href="/crear-usuario/" class="btn btn-primary btn-lg shadow">
+          <i class="bi bi-person-fill-add me-2 fs-4 align-middle"></i>
+          <span class="fs-5 align-middle">Crear usuario</span>
+        </a>
+      </div>
+    {% endif %}
+</body>
+{% endblock content %}

@@ -1,0 +1,123 @@
+{% extends 'home.html' %}
+{% block search_text %}asignatura{% endblock search_text %}
+{% block filters%}{% endblock filters%}
+
+{% block title %} | Listado de asignaturas {% endblock title %}
+
+{% block content %}
+    <body>
+      {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+      {% endif %}
+      <h1 class="text-center fw-bold custom-font-size mb-0 mt-4 pb-2">
+        Asignaturas
+      </h1>
+      {% if page_obj %}
+            <div class="table-responsive mt-4 ms-5 me-5">
+              <table class="table table-hover table-bordered align-middle table-custom-shadow rounded">
+                <thead class="table-info text-center">
+                  <tr>
+                    <th class="custom-bg1 text-start">Nombre de la asignatura</th>
+                    {% if is_not_alumno %}
+                      <th class="custom-bg1">Acciones</th>
+                    {% endif %}
+                  </tr>
+                </thead>
+                <tbody>
+                {% for subject in page_obj %}
+                  <tr>
+                    <td>
+                      <a href="/lista-de-documentos/?search=&subject={{ subject.id }}&upload_date=" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hove">{{ subject }}</a>
+                    </td>
+                      {% if is_not_alumno %}
+                        <td class="text-center">
+                        <a href="/editar-asignatura/{{ subject.id }}" class="btn btn-outline-warning btn-sm me-2">
+                          <i class="bi bi-pencil-fill"></i> Editar
+                        </a>
+                        
+                        <button id="open-{{ subject.id }}" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash-fill"></i> Eliminar</button>
+
+                        <dialog id="dialog-{{ subject.id }}" class="custom-shadow bordless">
+                          <h3>{{ subject|truncatechars:60 }}</h3>
+                          <p>¿Estás seguro de que quieres eliminar esta asignatura?</p>
+                          <a href="/eliminar-asignatura/{{ subject.id }}" class="btn btn-outline-danger btn-sm">Confirmar</a>
+                          <button id="close-{{ subject.id }}" class="btn btn-outline-primary btn-sm">Cerrar</button>
+                        </dialog>
+                        
+                        <script>
+                          document.addEventListener('DOMContentLoaded', (event) => {
+                            const openButton = document.getElementById('open-{{ subject.id }}');
+                            const closeButton = document.getElementById('close-{{ subject.id }}');
+                            const dialog = document.getElementById('dialog-{{ subject.id }}');
+                        
+                            openButton.addEventListener('click', () => {
+                              dialog.showModal();
+                            });
+                        
+                            closeButton.addEventListener('click', () => {
+                              dialog.close();
+                            });
+                          });
+                        </script>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <nav aria-label="Paginación asignaturas" class="d-flex align-items-center position-relative py-4 mb-4">
+              {% if is_not_alumno %}      
+                <a href="/crear-asignatura/" class="btn btn-primary btn-lg custom-shadow position-absolute start-50 translate-middle-x">
+                  <i class="bi bi-bookmark-plus-fill me-2 fs-4 align-middle"></i>
+                  <span class="fs-5 align-middle">Crear asignatura</span>
+                </a>
+              {% endif %}
+              <ul class="pagination m-auto me-5">
+                {% if page_obj.has_previous %}
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}&amp;{% if search %}search={{ search }}{% endif %}">
+                      &laquo; Anterior
+                    </a>
+                  </li>
+                {% else %}
+                  <li class="page-item disabled"><span class="page-link">&laquo; Anterior</span></li>
+                {% endif %}
+            
+                {% for num in page_range %}
+                  {% if num == page_obj.number %}
+                    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                  {% else %}
+                    <li class="page-item">
+                      <a class="page-link" href="?page={{ num }}&amp;{% if search %}search={{ search }}{% endif %}">
+                        {{ num }}
+                      </a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+            
+                {% if page_obj.has_next %}
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}&amp;{% if search %}search={{ search }}{% endif %}">Siguiente &raquo;</a>
+                  </li>
+                {% else %}
+                  <li class="page-item disabled"><span class="page-link">Siguiente &raquo;</span></li>
+                {% endif %}
+              </ul>
+            </nav>
+        {% else %}
+          <p class="text-center mt-2 fs-5">No se encontraron asignaturas.</p>
+          <div class="text-center mb-3 mt-1">
+            <a href="/crear-asignatura/" class="btn btn-primary btn-lg shadow">
+              <i class="bi bi-bookmark-plus-fill me-2 fs-4 align-middle"></i>
+              <span class="fs-5 align-middle">Crear asignatura</span>
+            </a>
+          </div>
+        {% endif %}
+    </body>
+{% endblock content %}

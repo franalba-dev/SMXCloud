@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+{% block search_visibility %}hidden{% endblock search_visibility %}
+{% block title %} | Error 404 {% endblock title %}
+
+
+{% block content %}
+<body >
+    <div class="justify-content-center align-items-center mt-auto mb-autp">
+      <div class="text-center">
+        <h1 class="error-code">404</h1>
+        <p class="error-message">Lo sentimos, la página que está buscando no se encuentra disponible.</p>
+        <a href="/" class="btn btn-primary mt-3">Volver al inicio</a>
+      </div>
+    </div>
+</body>
+  
+{% endblock content %}
