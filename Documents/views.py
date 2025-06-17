@@ -190,6 +190,7 @@ def update_document(request, pk=None):
 def delete_document(request, pk=None):
     document = Document.objects.get(pk=pk)
     if request.user == document.owner or user_is_not_alumno:
+        document.file.delete()
         document.delete()
         messages.success(request, ("Se ha eliminado el documento."))
         if request.user == document.owner:

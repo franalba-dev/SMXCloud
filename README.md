@@ -7,7 +7,8 @@ SMXCloud uses **[Django](https://www.djangoproject.com/)** as the base for the p
 ## 🗒️ Notes
 - In the futures days I will be uploading the guides that I made.
 - I made this project as a part of my final grade project, but I didn't have enough time to make it as well as I wanted. So I will be updating this project in my free time.
-- Right now, you can see the code and try to use the application, but it isn't recommended to use it in a real environment until the version 2.0, that may be the last version.   
+- Right now, you can see the code and try to use the application, but it isn't recommended to use it in a real environment until the version 2.0, that may be the last version.
+- The order of the updates might change.   
 - If you have any new idea, I will appreciate a lot that you share it with me.
  
 ## 🚀 Coming updates
@@ -18,7 +19,7 @@ SMXCloud uses **[Django](https://www.djangoproject.com/)** as the base for the p
 - [ ] Restructure the pages of the documents in order to make even easier to find the documents.
 - [ ] New setting's site for the website. There, you will be able, for example, to change the logo of the website and the name of it.
 - [x] Use base.html as the template base, instead of "home.html".
-- [ ] Delete the media of a document when you delete the document.
+- [x] Delete the media of a document when you delete the document.
 
 ### SMXCloud 1.2
 - [ ] New group "Administrators". This new group will be able to delete and create teacher users without having to go to the backend. Also, the administrators will be the only users to be able to manage the settings of the site.
@@ -42,6 +43,7 @@ SMXCloud uses **[Django](https://www.djangoproject.com/)** as the base for the p
 - [ ] Comments for the documents.
 - [ ] Logs of the actions made by users on the settings page.
 - [ ] Backup system for the documents.
+- [ ] Paper rusbish for the documents.
 
 ### SMXCloud 2.0
 - [ ] Optimize the code and make it clean.
