@@ -15,7 +15,7 @@ SMXCloud uses **[Django](https://www.djangoproject.com/)** as the base for the p
 
 ### SMXCloud 1.1
 - [ ] Translate to English some parts of the code.
-- [ ] Install Axes (or an alternative) to limit login attempts and prevent brute-force attacks.
+- [x] Install Axes to limit login attempts and prevent brute-force attacks.
 - [ ] Restructure the pages of the documents in order to make even easier to find the documents.
 - [ ] New setting's site for the website. There, you will be able, for example, to change the logo of the website and the name of it.
 - [x] Use base.html as the template base, instead of "home.html".
