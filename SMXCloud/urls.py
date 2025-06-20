@@ -3,7 +3,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from Documents.views import home, list_documents, upload_document, delete_document, update_document, list_subjects, create_subject, delete_subject, update_subject
-from Users.views import list_users, create_user, delete_user, update_user, no_autorizado
+from Users.views import list_users, create_user, delete_user, update_user, unauthorized
 
 
 urlpatterns = [
@@ -27,7 +27,7 @@ urlpatterns = [
 
     path('users/', include('Users.urls')),
     path('users/', include('django.contrib.auth.urls')),
-    path('no-autorizado/', no_autorizado),
+    path('unauthorized/', unauthorized),
 ]
 
 if settings.DEBUG:

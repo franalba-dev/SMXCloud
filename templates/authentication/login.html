@@ -2,7 +2,7 @@
 {% block search_visibility %}hidden{% endblock search_visibility %}
 
 
-{% block title %} | Iniciar Sesión {% endblock title %}
+{% block title %} | Log In {% endblock title %}
 
 {% block content %}
     {% if messages %}
@@ -13,20 +13,20 @@
         </div>
         {% endfor %}
     {% endif %}
-   <h2 class="ms-auto me-auto mt-auto">Iniciar Sesión</h2>
+   <h2 class="ms-auto me-auto mt-auto">Log In</h2>
     <form action="" method=POST class="ms-auto me-auto mb-auto">
         {% csrf_token %}
         <form>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Dirección de correo electrónico</label>
+              <label for="exampleInputEmail1" class="form-label">Email</label>
               <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+              <label for="exampleInputPassword1" class="form-label">Password</label>
               <input type="password" class="form-control" name="password">
             </div>
             <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
             </div>
             </form>
     </form>

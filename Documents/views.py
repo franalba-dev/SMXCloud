@@ -184,7 +184,7 @@ def update_document(request, pk=None):
                     {'document_form': document_form}
                 )
     else:
-        return redirect('/no-autorizado/')
+        return redirect('/unauthorized/')
 
 @login_required()
 def delete_document(request, pk=None):
@@ -198,7 +198,7 @@ def delete_document(request, pk=None):
         else:
             return redirect('/lista-de-documentos/')
     else:
-        return redirect('/no-autorizado/')
+        return redirect('/unauthorized/')
 
 @login_required()
 def list_subjects(request):
@@ -244,7 +244,7 @@ def list_subjects(request):
 
 
 @login_required()
-@user_passes_test(user_is_not_alumno, login_url='/no-autorizado/')
+@user_passes_test(user_is_not_alumno, login_url='/unauthorized/')
 def create_subject(request):
     if request.method == 'GET':
              return render(
@@ -266,7 +266,7 @@ def create_subject(request):
                  {'subject_form': form}
              )
          
-@user_passes_test(user_is_not_alumno, login_url='/no-autorizado/')
+@user_passes_test(user_is_not_alumno, login_url='/unauthorized/')
 @login_required()
 def update_subject(request, pk=None):
     subject = Subject.objects.get(pk=pk)
@@ -299,7 +299,7 @@ def update_subject(request, pk=None):
                 {'subject_form': form},
             )
          
-@user_passes_test(user_is_not_alumno, login_url='/no-autorizado/')
+@user_passes_test(user_is_not_alumno, login_url='/unauthorized/')
 @login_required()
 def delete_subject(request, pk=None):
     Subject.objects.get(pk=pk).delete()

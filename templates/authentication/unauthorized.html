@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block search_visibility %}hidden{% endblock search_visibility %}
+
+{% block title %} | Unauthorized{% endblock title %}
+
+{% block content %}
+    <div class="text-center p-5 bg-white rounded-4 custom-shadow m-auto">
+        <h1 class="text-danger mb-4">Acces Denied</h1>
+        <p class="mb-4">You don't have permission to do this action.</p>
+        <p class="text-muted">If you think that this is a mistake, please contact the system administrator.</p>
+        <a href="/" class="btn btn-primary mt-3">Get back to home</a>
+    </div>
+{% endblock content %}

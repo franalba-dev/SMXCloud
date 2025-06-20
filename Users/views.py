@@ -9,14 +9,14 @@ from django.contrib.auth.decorators import user_passes_test
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-def no_autorizado(request):
-    return render(request, 'authentication/no_autorizado.html')
+def unauthorized(request):
+    return render(request, 'authentication/unauthorized.html')
 
 def user_is_not_alumno(user):
     return not user.groups.filter(name='Alumnos').exists()
 
 @login_required()
-@user_passes_test(user_is_not_alumno, login_url='/no-autorizado/')
+@user_passes_test(user_is_not_alumno, login_url='/unauthorized/')
 def list_users(request):
     alumnos_group = Group.objects.get(name='Alumnos')
     users = User.objects.filter(groups=alumnos_group)
@@ -77,7 +77,7 @@ def list_users(request):
     )
 
 @login_required()
-@user_passes_test(user_is_not_alumno, login_url='/no-autorizado/')
+@user_passes_test(user_is_not_alumno, login_url='/unauthorized/')
 def create_user(request):
     if request.method == 'GET':
              return render(
@@ -104,7 +104,7 @@ def create_user(request):
                 {'user_form': form}
             )
 
-@user_passes_test(user_is_not_alumno, login_url='/no-autorizado/')
+@user_passes_test(user_is_not_alumno, login_url='/unauthorized/')
 @login_required()
 def update_user(request, pk=None):
     user = User.objects.get(pk=pk)
@@ -137,7 +137,7 @@ def update_user(request, pk=None):
                 {'user_form': form}
             )
 
-@user_passes_test(user_is_not_alumno, login_url='/no-autorizado/')
+@user_passes_test(user_is_not_alumno, login_url='/unauthorized/')
 @login_required()
 def delete_user(request, pk=None):
     User.objects.get(pk=pk).delete()
